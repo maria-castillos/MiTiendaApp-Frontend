@@ -1,57 +1,52 @@
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* 🎨 Estilos generales */
+*, *::before, *::after {
+  box-sizing: border-box; 
 }
 
-main {
-  flex: 1 0 auto;
+:root {
+  /* Colores y dimensiones reutilizables */
+  --color-primary: #1565c0;
+  --color-primary-dark: #0d47a1;
+  --color-success: #4CAF50; 
+  --color-white: #ffffff;
+  --shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+  --radius: 0.75rem; /* 12px aproximadamente */
+  --gap: 1rem; /* espacio base */
 }
-
-.card img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  background-color: #fff;
-  padding: 10px;
-}
-
-#totalCarrito {
-  font-weight: bold;
-  color: #0d47a1;
-}
-
-#confirmarPedido {
-  margin-top: 20px;
-}
-/* 📱 Diseño responsivo */
-
-/* Para pantallas pequeñas (celulares) */
-@media (max-width: 600px) {
+  /* 🎨 Estilos generales */
   body {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  header {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .logo {
-    width: 100px;
-    margin-bottom: 10px;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
   }
 
   main {
-    flex-direction: column;
-    align-items: center;
+    flex: 1 0 auto;
+  }
+
+  /* 🖼️ Tarjetas y productos */
+  .card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: #fff;
+    padding: 10px;
+  }
+
+  .card-title {
+    font-weight: 600;
+    color: #1565c0;
   }
 
   .producto {
-    width: 90%;
-    margin: 10px 0;
+    width: 250px;
+    margin: 10px;
   }
 
   .producto img {
@@ -61,13 +56,23 @@ main {
   }
 
   .boton {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #1565c0;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
   }
 
+  .boton:hover {
+    background-color: #0d47a1;
+  }
+
+  /* 🛒 Carrito */
   #carrito {
-    width: 100%;
+    max-width: 400px;
     margin-top: 20px;
   }
 
@@ -79,58 +84,162 @@ main {
     font-size: 14px;
   }
 
+  #totalCarrito {
+    font-weight: bold;
+    color: #0d47a1;
+  }
+
   #total {
     font-size: 16px;
     text-align: right;
     margin-top: 10px;
   }
 
+  #confirmarPedido {
+    margin-top: 20px;
+  }
+
+  /* Pedido confirmado */
   #pedidoConfirmado {
     padding: 20px;
     text-align: center;
   }
 
   #pedidoConfirmado h2 {
-    font-size: 20px;
+    font-size: 24px;
+    color: #1565c0;
     margin-bottom: 10px;
   }
 
   #pedidoConfirmado p {
-    font-size: 16px;
-  }
-}
-
-/* Para pantallas medianas (tabletas) */
-@media (min-width: 601px) and (max-width: 900px) {
-  .producto {
-    width: 45%;
+    font-size: 18px;
   }
 
-  main {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  /* 📱 Diseño responsivo */
 
-  .boton {
-    width: auto;
-  }
-}
+  /* --- Para pantallas pequeñas (celulares) --- */
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+      font-size: 14px;
+    }
 
-/* Para pantallas grandes (PC) */
-@media (min-width: 901px) {
-  .producto {
-    width: 250px;
-  }
+    header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
-  .producto img {
-    width: 100%;
-    height: auto;
-  }
+    .logo {
+      width: 100px;
+      margin-bottom: 10px;
+    }
 
-  #carrito {
-    max-width: 400px;
-  }
-}
+    main {
+      flex-direction: column;
+      align-items: center;
+    }
 
+    .producto {
+      width: 90%;
+      margin: 10px 0;
+    }
 
+    .boton {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+    }
+
+    #carrito {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .carrito-item {
+      font-size: 14px;
+    }
   
+    #pedidoConfirmado h2 {
+      font-size: 20px;
+    }
+
+    #pedidoConfirmado p {
+      font-size: 16px;
+    }
+
+    .card {
+      margin-top: 30px;
+    }
+
+    button.btn {
+      width: 100%;
+    }
+  }
+
+  .card-action.center a:hover {
+    background-color: #0d47a1; /* Azul más oscuro */
+    transform: scale(1.05);
+  }
+
+  /* --- Para pantallas medianas (tabletas) --- */
+  @media (min-width: 601px) and (max-width: 900px) {
+    main {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .producto {
+      width: 45%;
+    }
+
+    .boton {
+      width: auto;
+    }
+  }
+
+  /* --- Para pantallas grandes (PC) --- */
+  @media (min-width: 901px) {
+    .producto {
+      width: 250px;
+    }
+
+    #carrito {
+      max-width: 400px;
+    }
+  }
+
+#pedidoConfirmado .collection-header {
+    background-color: #e3f2fd !important; 
+    color: var(--color-primary-dark) !important; 
+    border-bottom: 1px solid var(--color-primary) !important;
+    font-weight: 600 !important;
+}
+
+#pedidoConfirmado .collection-item {
+    font-size: 1rem;
+    background-color: var(--color-white) !important; /* Asegura el fondo blanco en los ítems */
+}
+
+.green.darken-1 {
+    background-color: var(--color-primary) !important;
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#cartCount {
+  background: var(--color-primary-dark);
+  color: white;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%; 
+}

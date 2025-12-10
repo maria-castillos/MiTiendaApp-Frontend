@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiTiendaApp - Iniciar Sesión</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="blue lighten-1">
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo"><i class="material-icons">store</i> MiTiendaApp</a>
+    </div>
+  </nav>
+
+  <div class="container center section">
+    <h4>Iniciar Sesión</h4>
+    <form id="loginForm" class="col s12">
+      <div class="input-field">
+        <input id="email" type="email" required>
+        <label for="email" class="active">Correo electrónico</label>
+      </div>
+
+      <div class="input-field">
+        <input id="password" type="password" required>
+        <label for="password" class="active">Contraseña</label>
+      </div>
+
+      <button type="submit" class="btn blue">Entrar</button>
+      <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+    </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+
+</body>
+</html>

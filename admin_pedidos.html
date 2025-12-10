@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos - Admin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script type="module">
+  import { protectPage } from "./protect.js";
+  console.log("Admin Pedidos page loaded");
+  protectPage(["admin"]); // Solo admin
+  </script>
+</head>
+<body>
+
+  <nav class="black">
+    <div class="nav-wrapper container">
+      <a href="admin_panel.html" class="brand-logo">Admin</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="productos_admin.html">Productos</a></li>
+        <li><a href="admin_pedidos.html">Pedidos</a></li>
+        <li><a id="logoutBtn">Cerrar sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container section">
+    <h4 class="center">Pedidos de usuarios</h4>
+    <ul id="listaPedidosAdmin" class="collection"></ul>
+  </div>
+
+  <script src="js/protegerRutas.js"></script>
+  <script src="js/logout.js"></script>
+  <script src="js/admin_pedidos.js"></script>
+  
+</body>
+</html>
