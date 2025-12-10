@@ -46,15 +46,28 @@ MiTiendaApp-Frontend/
 │   └── style.css
 │
 ├── img/                      # Imágenes y recursos
-│   └── (iconos, productos, etc.)
+│   └── logo.jpg
 │
 ├── js/                       # Lógica JavaScript
-│    └── main.js
+│   ├── admin_pedidos.js
+│   ├── auth.js
+│   ├── carrito.js
+│   ├── logout.js
+│   ├── main.js
+│   ├── pedido_confirmado.js
+│   ├── productos_admin.js
+│   ├── productos_cliente.js
+│   ├── protect.js
+│   └── protegerRutas.js
 │
+├── admin_pedidos.html        # Administración de pedidos (nueva)
 ├── carrito.html              # Página del carrito de compras
 ├── index.html                # Página principal
+├── login.html                # Pantalla de login
 ├── pedido_confirmado.html    # Página de confirmación de pedido
-├── productos.html            # Listado de productos
+├── productos_admin.html      # Listado de productos (admin)
+├── productos_cliente.html    # Listado de productos (cliente)
+├── registro.html             # Registro de usuarios
 ├── .gitignore                # Archivos ignorados por Git
 └── README.md
 ```

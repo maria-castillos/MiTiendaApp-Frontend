@@ -71,3 +71,17 @@ function agregarAlCarrito(id) {
 
   M.toast({ html: `${producto.nombre} agregado al carrito`, classes: 'green' });
 }
+
+// Protección de rutas
+
+const paginasProtegidas = ['productos.html', 'carrito.html'];
+const paginaActual = window.location.pathname.split('/').pop();
+
+if (paginasProtegidas.includes(paginaActual)) {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    alert('Debes iniciar sesión para acceder a esta página.');
+    window.location.href = 'login.html';
+  }
+}
+

@@ -3,40 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrito - MiTiendaApp</title>
+  <title>Productos - MiTiendaApp</title>
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="css/styles.css">
+
+  <script src="js/protect.js"></script> 
+<script>
+  protectPage(["user"]); 
+</script>
 </head>
+
 <body>
+
   <nav class="blue lighten-1">
     <div class="nav-wrapper container">
-      <a href="index.html" class="brand-logo"><i class="material-icons">store</i> MiTiendaApp</a>
+      <a href="index.html" class="brand-logo">
+        <i class="material-icons">store</i> MiTiendaApp
+      </a>
+
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="productos_cliente.html">Productos</a></li>
+        <li>
+          <a href="carrito.html" class="cart-link">
+            Carrito <span id="cartCount">0</span>
+          </a>
+        </li>
         <li><a id="logoutBtn">Cerrar sesión</a></li>
       </ul>
+      
     </div>
   </nav>
 
   <div class="container section">
-    <h4 class="center">Tu Carrito</h4>
-    <ul id="listaCarrito" class="collection"></ul>
+    <h4 class="center">Nuestros Productos</h4>
 
-    <div class="section center">
-      <h5>Total del pedido: $<span id="totalCarrito">0</span></h5>
-      <button id="confirmarPedido" class="btn-large green">Confirmar Pedido</button>
-    </div>
+    <div class="row" id="listaProductos"></div>
   </div>
 
   <footer class="page-footer blue lighten-1">
     <div class="container center">
-      <p>© 2025 MiTiendaApp | Todos los derechos reservados</p>
+      <p>© 2025 MiTiendaApp</p>
     </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="js/carrito.js"></script>
+  <script src="js/protegerRutas.js"></script>
+  <script src="js/logout.js"></script>
+  <script src="js/productos_cliente.js"></script>
 
 </body>
 </html>
